@@ -1,7 +1,8 @@
  //boon kai
 public class Customer {
 	
-	private String name, email;
+	private String name;
+	private String email;
 	private int phone;
 	
 	

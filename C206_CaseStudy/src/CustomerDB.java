@@ -95,7 +95,7 @@ private static ArrayList<Customer> customerList = new ArrayList<Customer>();
 					int size = customerList.size();
 					delCustomer(delete);
 					if (size != customerList.size()) {
-						System.out.println("Successfully deleted!");
+						System.out.println("Sucessfully deleted!");
 					}
 					else {
 						System.out.println("Delete unsuccessful.");

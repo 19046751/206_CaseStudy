@@ -79,6 +79,7 @@ public class C206_CaseStudyTest {
 	
 	@Test
 	//boon kai 
+	//checks for customer by phone no
 	public void searchCustomerByPhoneTest() {
 		checkForArrayList();
 		addCustomerTest();
