@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-// done by boon kai
+// done by boon kai.
 public class CustomerDB{
 	
 private static ArrayList<Customer> customerList = new ArrayList<Customer>();

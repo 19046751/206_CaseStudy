@@ -17,6 +17,8 @@ public class C206_CaseStudy {
 			option = Helper.readInt("Enter an option > ");
 			
 			if (option == 1) {
+				int subOption = 0;
+				CustomerDB.processOption(subOption);
 				//Call BikeDB 
 				//BikeDB.handleBikeOptions();
 				

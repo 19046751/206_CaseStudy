@@ -1,4 +1,4 @@
- //boon kai
+ //boon kai.
 public class Customer {
 	
 	private String name;
