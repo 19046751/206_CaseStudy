@@ -24,7 +24,7 @@ public class Appointment extends AppointmentDB{
 		this.customerName = customerName;
 	}	
 
-	public String getDate() {
+	public String getDate(){
 		return date;
 	}
 

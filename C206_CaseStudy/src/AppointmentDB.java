@@ -64,7 +64,7 @@ public class AppointmentDB {
 			System.out.println("Delete unsuccessful.");
 		}
 	}
-	public static void showAppointmentMenu() {
+	public static void showAppointmentMenu(){
 		// Display the menu
 		System.out.println("Option 1: View appointment list");
 		System.out.println("Option 2: Add a new appointment");

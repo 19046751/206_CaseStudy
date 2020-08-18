@@ -18,7 +18,7 @@ import org.junit.Test;
  * @author 19044600
  *
  */
-public class AppointmentDBTest {
+public class AppointmentDBTest{
 	private Appointment appt1;
 	private Appointment appt2;
 
