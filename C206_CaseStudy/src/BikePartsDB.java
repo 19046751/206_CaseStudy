@@ -11,7 +11,7 @@ public class BikePartsDB {
 	}	
 
 	public static void addBike(BikeParts bk) {
-		//add some data to the lists
+		//add some data to the list
 		bikepartsList.add(bk);
 		if (bikepartsList.size() != 0) {
 			System.out.println("Successfully added!");

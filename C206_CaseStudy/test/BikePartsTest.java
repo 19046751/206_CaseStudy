@@ -64,7 +64,7 @@ public class BikePartsTest {
 	@Test
 
 	public void deleteBikeTest() {
-		//adds and check first
+		//add and check firsts
 		checkForArrayList();
 		addBikeTest();
 		BikePartsDB.delBike(2);
@@ -81,7 +81,6 @@ public class BikePartsTest {
 		bp1 = null;
 		bp2 = null;
 		BikePartsDB.removeAll();
-		
 	}
 
 }

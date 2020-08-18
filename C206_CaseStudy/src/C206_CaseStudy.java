@@ -17,18 +17,18 @@ public class C206_CaseStudy {
 			option = Helper.readInt("Enter an option > ");
 			
 			if (option == 1) {
-				//Call BikeDB 
+				
 				BikePartsDB.processOption(subOption);
 				
 				
 			}else if (option == 2) {
-				//Call BikePartDB menu
+				
 				
 			}else if (option == 3) {
-				//Call Feedback menu
+				
 				
 			}else if(option == 4) {
-				//Call Appointment menu
+				
 		
 			}else if(option == 5) {
 				//quit

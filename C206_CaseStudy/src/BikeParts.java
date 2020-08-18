@@ -8,7 +8,7 @@ public class BikeParts extends BikePartsDB{
 		
 		
 		public BikeParts(String partName, String description, boolean isAvailable) {
-			//initialize paramaters
+			//initialize paramater
 					
 		}
 		public String getPartName() {
