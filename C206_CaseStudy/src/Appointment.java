@@ -36,7 +36,7 @@ public class Appointment extends AppointmentDB{
 		return time;
 	}
 
-	public void setTime(String time) {
+	public void setTime(String time){
 		this.time = time;
 	}
 	
