@@ -76,7 +76,7 @@ public class AppointmentDBTest {
 	}
 
 	@Test
-	public void deletetest() {
+	public void deletetest(){
 		 //Item list is not null, so that can delete a new appointment
 		assertNotNull("Test if there is valid Appointment arraylist to delete to", apptList);
 

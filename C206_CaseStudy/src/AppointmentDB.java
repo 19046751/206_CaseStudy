@@ -51,7 +51,7 @@ public class AppointmentDB {
 
 	}
 
-	public static void delAppointment() {
+	public static void delAppointment(){
 		viewAppointmentList();
 		int num = Helper.readInt("Enter NO. to delete > ");
 		boolean isDeleted = false;
