@@ -8,6 +8,7 @@ public class C206_CaseStudyTest {
 
 	@Before
 	public void setUp() throws Exception {
+		
 	}
 
 	@After
