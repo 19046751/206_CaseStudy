@@ -42,6 +42,7 @@ public class FeedbackDB {
 		System.out.println("1. View all Feedback");
 		System.out.println("2. Add new feedback");
 		System.out.println("3. Delete a feedback");
+		System.out.println("4. Enter response to feedback");
 		System.out.println("5. Exit");
 	}
 
@@ -74,30 +75,31 @@ public class FeedbackDB {
 					System.out.println("Delete unsuccessful.");
 				}
 
-			} 
-			
+			}
+
 			else if (subOption == 4) {
 				System.out.println("End of tasks");
 				break;
-			}
-			else {
+			} else {
 				System.out.println("Invalid type");
 			}
 		}
 	}
-	
+
 	public static Feedback inputFeedbacktoAdd() {
-		
+
 		String name = Helper.readString("Enter Name > ");
 		String feedback = Helper.readString("Enter Feedback > ");
-		String response = Helper.readString("Enter Response > ");
-		
+		String response = Helper.readString("Enter response > ");
+
 		Feedback newFB = new Feedback(name, feedback, response);
-		
+
 		return newFB;
-		
+
 	}
-	
+
+
+
 	public static int selectFeedbacktoDelete() {
 		int number = Helper.readInt("Enter No. to delete > ");
 		return number;

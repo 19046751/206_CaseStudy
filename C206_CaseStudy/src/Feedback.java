@@ -14,13 +14,10 @@ public class Feedback {
 	private String response;
 		
 	public Feedback(String customer, String feedback, String response) {
-		super();
 		this.customer = customer;
 		this.feedback = feedback;
 		this.response = response;
 	}
-
-
 	public String getCustomer() {
 		return customer;
 	}
