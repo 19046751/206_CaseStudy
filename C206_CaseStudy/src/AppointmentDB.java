@@ -29,7 +29,7 @@ public class AppointmentDB {
 			System.out.println("Successfully added!");
 		}
 		else {
-			System.out.println("Add fail");
+			System.out.println("Add fail.");
 		}
 	}
 

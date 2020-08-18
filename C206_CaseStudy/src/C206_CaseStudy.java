@@ -84,7 +84,7 @@ public class C206_CaseStudy {
 			System.out.println("Successfully added!");
 		}
 		else {
-			System.out.println("Add fail");
+			System.out.println("Add fail.");
 		}
 	}
 

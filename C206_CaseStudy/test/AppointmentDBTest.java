@@ -86,8 +86,8 @@ public class AppointmentDBTest {
 		assertFalse("Test if appointment is deleted", isDeleted);
 
 		 //Test if the ArrayList is updated after delete
-		//isDeleted = C206_CaseStudy.delAppointment(apptList, appt1);
-		//assert
+		isDeleted = C206_CaseStudy.delAppointment(apptList, appt1);
+		assertFalse("Test if appointment is deleted", isDeleted);
 
 	}
 
