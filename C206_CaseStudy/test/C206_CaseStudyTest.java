@@ -13,16 +13,19 @@ public class C206_CaseStudyTest {
 
 	@Before
 	public void setUp() throws Exception {
+<<<<<<< HEAD
+=======
 		//boon kai
 		 c1 = new Customer("kai", "kai@abc.com", 80001234);
 		 c2 = new Customer("aly", "aly@abc.com", 81234567);
+>>>>>>> branch 'master' of https://github.com/19046751/W67Q-Team3.git
 		
 	}
 
 
 	@Test
 	public void c206_test() {
-		//fail("Not yet implemented"); 
+		//fail("Not yet implemented")
 		assertTrue("C206_CaseStudy_SampleTest ",true);
 	}
 	
