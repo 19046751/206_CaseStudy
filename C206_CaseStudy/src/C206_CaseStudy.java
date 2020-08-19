@@ -9,7 +9,7 @@ public class C206_CaseStudy {
 			// TODO Auto-generated method stub
 			int option = 0;
 			
-			while(option != OPTION) {
+			while(option != OPTION){
 				
 				AppointmentDB.showAppointmentMenu();
 				option = Helper.readInt("Enter an option > ");
