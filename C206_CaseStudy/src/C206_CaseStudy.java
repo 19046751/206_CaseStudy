@@ -64,7 +64,7 @@ public class C206_CaseStudy {
 			return null;
 		}
 
-		public static String viewAppointmentList(ArrayList<Appointment> apptList) {
+		public static String viewAppointmentList(ArrayList<Appointment> apptList){
 			// TODO Auto-generated method stub
 			if (apptList.size() == 0) {
 				System.out.println("No customers.");
