@@ -18,7 +18,7 @@ public class AppointmentDB {
 	private static ArrayList<Appointment> apptList = new ArrayList<Appointment>();
 	
 	public static void addAppointment() {
-		String date = Helper.readString("Enter date > ");
+		String date = Helper.readString("Enter date (dd-mmmm-yyyy) > ");
 		String time = Helper.readString("Enter time > ");
 		String name = Helper.readString("Enter name > ");
 
@@ -66,10 +66,60 @@ public class AppointmentDB {
 	}
 	public static void showAppointmentMenu(){
 		// Display the menu
+		Helper.line(40, "-");
+		System.out.println("APPOINTMENT");
+		Helper.line(40, "-");
 		System.out.println("Option 1: View appointment list");
 		System.out.println("Option 2: Add a new appointment");
 		System.out.println("Option 3: Delete an existing appointment");
-		System.out.println("Option 4: Exit");
+		System.out.println("Option 4: Update an existing appointment");
+		System.out.println("Option 5: Exit");
+	}
+	public static void updateAppointment() {
+		viewAppointmentList();
+		int num = Helper.readInt("Enter NO. to update > ");
+		boolean isUpdated = false;
+		
+		for(int i = 0; i < apptList.size(); i++) {
+			if((i+1) == num) {
+				String newDate = Helper.readString("Enter new date (dd-mmmm-yyyy) > ");
+				String newTime = Helper.readString("Enter new time > ");
+				apptList.get(i).setDate(newDate);
+				apptList.get(i).setTime(newTime);
+				isUpdated = true;
+				System.out.println("Appointment update successfully!");
+			}
+		}
+		if(isUpdated == false) {
+			System.out.println("Update unsuccessfully!");
+		}
+		
+	}
+	public static void processOption(int subOption) {
+		subOption = 0;
+		
+		while(subOption != 5) {
+			showAppointmentMenu();
+			subOption = Helper.readInt("Enter option > ");
+			
+			if(subOption == 1) {
+				viewAppointmentList();
+			}
+			else if(subOption == 2) {
+				addAppointment();
+			}
+			else if(subOption == 3) {
+				delAppointment();
+			}
+			else if(subOption == 4) {
+				updateAppointment();
+			}
+			else {
+				System.out.println("Invalid input");
+			}
+			
+		}
+		System.out.println("Goodbye! See you again");
 	}
 
 

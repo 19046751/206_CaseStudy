@@ -1,29 +1,22 @@
 import java.util.ArrayList;
 
 public class C206_CaseStudy {
-	private static final int OPTION = 4;
+	private static final int OPTION = 5;
 
 	public static void main(String[] args) {
 		// insert your menu here
 		// TODO Auto-generated method stub
-		int option = 0;
-
+		int option = Helper.readInt("Enter option > ");
+		
+		
 		while (option != OPTION) {
-
-			AppointmentDB.showAppointmentMenu();
-			option = Helper.readInt("Enter an option > ");
-
-			if (option == 1) {
-				AppointmentDB.viewAppointmentList();
-			} else if (option == 2) {
-				AppointmentDB.addAppointment();
-			} else if (option == 3) {
-				AppointmentDB.delAppointment();
-				;
+			if (option == 1) { //appointment
+				int subOption = 0;
+				AppointmentDB.processOption(subOption);		
+			}
+				
 			}
 		}
-		System.out.println("GoodBye! See You Again!");
-	}
 
 	/**
 	 * @param apptList
