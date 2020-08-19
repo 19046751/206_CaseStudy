@@ -54,7 +54,7 @@ public class C206_CaseStudy {
 			int num = Helper.readInt("Enter NO. to delete > ");
 			boolean isDeleted = false;
 			
-			if (isDeleted == false) {
+			if (isDeleted == false){
 				apptList.remove(num-1);
 				isDeleted = true;
 				System.out.println("Successfully deleted!");
