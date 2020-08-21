@@ -13,12 +13,12 @@ public class C206_CaseStudyTest {
 
 	@Before
 	public void setUp() throws Exception {
-<<<<<<< HEAD
-=======
+//<<<<<<< HEAD
+//=======
 		//boon kai
 		 c1 = new Customer("kai", "kai@abc.com", 80001234);
 		 c2 = new Customer("aly", "aly@abc.com", 81234567);
->>>>>>> branch 'master' of https://github.com/19046751/W67Q-Team3.git
+//>>>>>>> branch 'master' of https://github.com/19046751/W67Q-Team3.git
 		
 	}
 

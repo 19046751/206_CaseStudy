@@ -1,5 +1,6 @@
 
-public class BikeParts extends BikePartsDB{
+
+public class BikeParts{
 		
 		//declare class parameters
 	private String partName;
@@ -9,7 +10,9 @@ public class BikeParts extends BikePartsDB{
 		
 		public BikeParts(String partName, String description, boolean isAvailable) {
 			//initialize paramater
-					
+			this.partName = partName;
+			this.description = description;
+			this.isAvailable = isAvailable;
 		}
 		public String getPartName() {
 			return partName;
@@ -31,7 +34,8 @@ public class BikeParts extends BikePartsDB{
 		}
 
 		public String toString() {
-			return description;
-			//format string to return
-		}
+	        String x = "" + this.isAvailable;
+	        return x;
+	    }
+		
 }

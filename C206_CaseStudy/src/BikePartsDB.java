@@ -58,13 +58,10 @@ public class BikePartsDB {
 				BikeParts newBikeparts = inputBikePartsToAdd();
 
 				addBike(newBikeparts);
-				for (int i = 0; bikepartsList.size() > i; i++) {
-					String newBikeParts = String.format("%-10d %-10s %-10s %-10s\n", i + 1, bikepartsList.get(i).getPartName(), bikepartsList.get(i).getDescription(), bikepartsList.get(i).isAvailable());
+	
 
 
-
-				}
-
+				
 				} else if (subOption  == 3) {
 					// Delete a bike part
 					viewAllBikeParts();
