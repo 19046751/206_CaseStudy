@@ -17,4 +17,32 @@ public class C206_CaseStudy {
 
 		}
 	}
+
+	public static void addBike(ArrayList<BikeParts> bikepartsList, BikeParts b1) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public static void addBikePartstest(ArrayList<BikeParts> bikepartsList, BikeParts b1) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public static String viewAllBikeParts(ArrayList<BikeParts> bikepartsList) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public static void deletetest(ArrayList<BikeParts> bikepartsList, BikeParts b1) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+
+
+	
+
+	
 }

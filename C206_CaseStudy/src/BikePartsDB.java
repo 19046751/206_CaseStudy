@@ -1,150 +1,117 @@
 import java.util.ArrayList;
+
 public class BikePartsDB {
+
 	private static ArrayList<BikeParts> bikepartsList = new ArrayList<BikeParts>();
+	
+	public static void addBike() {
+		String partName = Helper.readString("Enter Part Name > ");
+		String description = Helper.readString("Enter Description > ");
+		boolean isAvailable = Helper.readBoolean("Enter Availability > ");
 
-	public static void showBikePartsMenu() {
-		//Display the menu
-		System.out.println("Option 1: View all Bike Parts");
-		System.out.println("Option 2: Add a new Bike Parts");
-		System.out.println("Option 3: Delete a Bike Parts");
-		System.out.println("Option 4: Exit");
-	}	
-
-	public static void addBike(BikeParts bk) {
-		//add some data to the list
-		bikepartsList.add(bk);
-		if (bikepartsList.size() != 0) {
+		BikeParts newBike = new BikeParts(partName, description, isAvailable);
+		bikepartsList.add(newBike);
+		
+		if(bikepartsList.size() != 0) {
 			System.out.println("Successfully added!");
 		}
 		else {
-			System.out.println("Add fail!");
+			System.out.println("Add fail.");
 		}
 	}
-
 
 	public static void viewAllBikeParts() {
 
 		if (bikepartsList.size() == 0) {
-			System.out.println("No bike parts.");
+			System.out.println("No Bike Parts.");
 		}
 
 		else {
-			//display all Customers in the list
+			// display all Customers in the list
 			String output = String.format("%-10s %-10s %-10s %-10s\n", "NO.", "PARTNAME", "DESCRIPTION", "AVAILABILITY");
 			for (int i = 0; bikepartsList.size() > i; i++) {
-				output += String.format("%-10d %-10s %-10s %-10s\n", i + 1, bikepartsList.get(i).getPartName(), bikepartsList.get(i).getDescription(), bikepartsList.get(i).isAvailable());
+				output += String.format("%-10d %-10s %-10s %-10s\n", i + 1, bikepartsList.get(i).getPartName(),
+						bikepartsList.get(i).getDescription(), bikepartsList.get(i).isAvailable());
 			}
 			System.out.println(output);
 		}
 
 	}
 
-	public static void delBike(int BikepartsID) {
-		//clean up the data in the list
-		bikepartsList.remove(BikepartsID - 1);
+	public static void delBike(){
+		viewAllBikeParts();
+		int num = Helper.readInt("Enter NO. to delete > ");
+		boolean isDeleted = false;
+		
+		if (isDeleted == false) {
+			bikepartsList.remove(num-1);
+			isDeleted = true;
+			System.out.println("Successfully deleted!");
+		} else {
+			System.out.println("Delete unsuccessful.");
+		}
+	}
+	public static void showBikePartsMenu(){
+		// Display the menu
+		Helper.line(40, "-");
+		System.out.println("BIKE PARTS");
+		Helper.line(40, "-");
+		System.out.println("Option 1: View Bike Parts list");
+		System.out.println("Option 2: Add new Bike Parts");
+		System.out.println("Option 3: Delete Bike Parts");
+		System.out.println("Option 4: Update Bike Parts");
+		System.out.println("Option 5: Exit");
+	}
+	public static void updateBikeParts() {
+		viewAllBikeParts();
+		int num = Helper.readInt("Enter NO. to update > ");
+		boolean isUpdated = false;
+		
+		for(int i = 0; i < bikepartsList.size(); i++) {
+			if((i+1) == num) {
+				boolean newAvailable = Helper.readBoolean("Enter new Availability > ");
+				bikepartsList.get(i).setAvailable(newAvailable);
+				isUpdated = true;
+				System.out.println("Bike Parts availability update successfully!");
+			}
+		}
+		if(isUpdated == false) {
+			System.out.println("Update unsuccessfully!");
+		}
+		
 	}
 	public static void processOption(int subOption) {
-
-		while (subOption != 4) {
+		subOption = 0;
+		
+		while(subOption != 5) {
 			showBikePartsMenu();
 			subOption = Helper.readInt("Enter option > ");
-			if (subOption == 1) {
-				// View all bike part
+			
+			if(subOption == 1) {
 				viewAllBikeParts();
-
-
-			} else if (subOption  == 2) {
-				// Add a bike part
-				BikeParts newBikeparts = inputBikePartsToAdd();
-
-				addBike(newBikeparts);
-	
-
-
-				
-				} else if (subOption  == 3) {
-					// Delete a bike part
-					viewAllBikeParts();
-					int delete = selectBikePartsToDelect1();
-					int size = bikepartsList.size();
-					delBike(delete);
-					if (size != bikepartsList.size()) {
-						System.out.println("Successfully deleted!");
-					}
-					else {
-						System.out.println("Delete unsuccessful");
-					}
-
-				}else if (subOption == 4) {
-					System.out.println("End of tasks");
-					break;
-				}
-				//invalid option
-				else {
-					System.out.println("Invalid type");
-				}
 			}
-
-			//show the menu again & ask for option
-			showBikePartsMenu();
-
-
-		}
-
-
-
-		//==========Option 1 ==============
-
-
-
-		//==========Option 2 ==============
-		public static BikeParts inputBikePartsToAdd() {
-			String partName = Helper.readString("Enter Part Name > ");
-			String description = Helper.readString("Enter Description > ");
-			boolean isAvailable = Helper.readBoolean("Enter Availability > ");
-
-			BikeParts newBikeparts = new BikeParts(partName, description, isAvailable);
-			return newBikeparts;
-			//request user for the bike part to add to the list
-		}
-
-
-
-		//==========Option 3 ==============
-		public static int selectBikePartsToDelect1() {
-			//request the user to select bike part for process
-
-			int number = Helper.readInt("Enter NO. to delete > ");
-			return number;
-
-		}
-
-		public static void delBikeParts(int bikepartsID) {
-			//remove bike part to list
-
-		}
-
-		public static void populateBikePartsDB() {
-			// TODO Auto-generated method stub
-
-		}
-
-		public static void cleanupBikePartsDB() {
-			// TODO Auto-generated method stub
-
-		}
-
-		public static void removeAll() {
-			// TODO Auto-generated method stub
+			else if(subOption == 2) {
+				addBike();
+			}
+			else if(subOption == 3) {
+				delBike();
+			}
+			else if(subOption == 4) {
+				updateBikeParts();
+			}
+			else {
+				System.out.println("Invalid input");
+			}
 			
 		}
-
-		public static Object getSize() {
-			// TODO Auto-generated method stub
-			return null;
-		}
-
-
-
-
+		System.out.println("Thank you! See you again");
 	}
+
+	public static void removeAll() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+}
