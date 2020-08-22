@@ -98,6 +98,10 @@ public class CustomerTest {
 			addCustomerTest();
 			CustomerDB.updateCustomerInfo();
 			assertEquals("Check if name updated", "kaii", c1.getName());
+			CustomerDB.updateCustomerInfo();
+			assertEquals("Check if email updated", "kaii@abc.com", c1.getEmail());
+			CustomerDB.updateCustomerInfo();
+			assertEquals("Check if phone number is updated", 90001234, c1.getPhone());
 			
 			
 		}
