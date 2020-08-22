@@ -19,7 +19,7 @@ public class AppointmentDB {
 	
 	public static void addAppointment() {
 		String date = Helper.readString("Enter date (dd-mmmm-yyyy) > ");
-		String time = Helper.readString("Enter time > ");
+		String time = Helper.readString("Enter time (hhmm)> ");
 		String name = Helper.readString("Enter name > ");
 
 		Appointment newCust = new Appointment(date, time, name);
@@ -40,7 +40,7 @@ public class AppointmentDB {
 		}
 
 		else {
-			// display all Customers in the list
+			//display all Appointment list
 			String output = String.format("%-10s %-10s %-10s %-10s\n", "NO.", "NAME", "DATE", "TIME");
 			for (int i = 0; apptList.size() > i; i++) {
 				output += String.format("%-10d %-10s %-10s %-10s\n", i + 1, apptList.get(i).getCustomerName(),
@@ -73,6 +73,7 @@ public class AppointmentDB {
 		System.out.println("Option 2: Add a new appointment");
 		System.out.println("Option 3: Delete an existing appointment");
 		System.out.println("Option 4: Update an existing appointment");
+		System.out.println("Option 5: Search appointment by date");
 		System.out.println("Option 5: Exit");
 	}
 	public static void updateAppointment() {
@@ -82,8 +83,8 @@ public class AppointmentDB {
 		
 		for(int i = 0; i < apptList.size(); i++) {
 			if((i+1) == num) {
-				String newDate = Helper.readString("Enter new date (dd-mmmm-yyyy) > ");
-				String newTime = Helper.readString("Enter new time > ");
+				String newDate = Helper.readString("Enter new date (dd-mm-yyyy) > ");
+				String newTime = Helper.readString("Enter new time (hhmm)> ");
 				apptList.get(i).setDate(newDate);
 				apptList.get(i).setTime(newTime);
 				isUpdated = true;
@@ -95,10 +96,27 @@ public class AppointmentDB {
 		}
 		
 	}
+	public static void searchAppointment() {
+		String searchDate = Helper.readString("Enter date to search apointment (dd-mm-yyyy) > ");
+		String output = "";
+		
+		for(int i = 0; i < apptList.size(); i++){
+			if(searchDate.equals(apptList.get(i).getDate())) {
+				output += String.format("%-10s %-10s %-10s %-10s\n", "NO.", "NAME", "DATE", "TIME");
+				output += String.format("%-10d %-10s %-10s %-10s\n", i + 1, apptList.get(i).getCustomerName(),
+						apptList.get(i).getDate(), apptList.get(i).getTime());
+			}
+			else {
+				System.out.println("There is no appointment on that day!");
+			}
+			}
+		System.out.println(output);
+		}
+	
 	public static void processOption(int subOption) {
 		subOption = 0;
 		
-		while(subOption != 5) {
+		while(subOption != 6) {
 			showAppointmentMenu();
 			subOption = Helper.readInt("Enter option > ");
 			
@@ -114,12 +132,21 @@ public class AppointmentDB {
 			else if(subOption == 4) {
 				updateAppointment();
 			}
+			else if(subOption == 5) {
+				searchAppointment();
+			}
 			else {
 				System.out.println("Invalid input");
 			}
 			
 		}
 		System.out.println("Goodbye! See you again");
+	}
+	public static int getSize() {
+		return apptList.size();
+	}
+	public static ArrayList<Appointment> getList() {
+		return apptList;
 	}
 
 
