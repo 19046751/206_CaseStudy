@@ -26,7 +26,7 @@ public class AppointmentDBTest {
 	//}
 
 	@Test
-	public void viewtest(){
+	public void viewtest() {
 
 		// Appointment list has 2 appointment, test the appointment list have the size of 2
 		assertEquals("Test if that Appointment arraylist size is 0", 2, Appointment.getSize());

@@ -35,7 +35,7 @@ public class AppointmentDB {
 
 	public static void viewAppointmentList() {
 
-		if (apptList.size() == 0) {
+		if (apptList.size() == 0){
 			System.out.println("No customers.");
 		}
 
@@ -56,13 +56,21 @@ public class AppointmentDB {
 		int num = Helper.readInt("Enter NO. to delete > ");
 		boolean isDeleted = false;
 		
-		if (isDeleted == false) {
-			apptList.remove(num-1);
-			isDeleted = true;
-			System.out.println("Successfully deleted!");
-		} else {
-			System.out.println("Delete unsuccessful.");
+		for(int i = 0; i<apptList.size();i++) {
+			if((i+1) == num) {
+				if (isDeleted == false) {
+					apptList.remove(num-1);
+					isDeleted = true;
+					System.out.println("Successfully deleted!");
+				} else {
+					System.out.println("Delete unsuccessful.");
+				}
+			}
+			else {
+				System.out.println("Wrong NO. ");
+			}
 		}
+		
 	}
 	public static void showAppointmentMenu(){
 		// Display the menu
@@ -90,6 +98,7 @@ public class AppointmentDB {
 				isUpdated = true;
 				System.out.println("Appointment update successfully!");
 			}
+			System.out.println("Wrong NO.");
 		}
 		if(isUpdated == false) {
 			System.out.println("Update unsuccessfully!");
