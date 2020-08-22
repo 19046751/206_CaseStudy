@@ -145,9 +145,6 @@ public class AppointmentDB {
 	public static int getSize() {
 		return apptList.size();
 	}
-	public static ArrayList<Appointment> getList() {
-		return apptList;
-	}
 
 
 }
