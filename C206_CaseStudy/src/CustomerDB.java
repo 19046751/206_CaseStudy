@@ -58,13 +58,14 @@ private static ArrayList<Customer> customerList = new ArrayList<Customer>();
 		System.out.println("Option 2: Search by Phone Number");
 		System.out.println("Option 3: Add a new Customer");
 		System.out.println("Option 4: Delete an existing Customer");
-		System.out.println("Option 5: Exit");
+		System.out.println("Option 5: Update Customer Details");
+		System.out.println("Option 6: Exit");
 	}	
 	
 	//first sprint
 	public static void processOption(int subOption) {
 			subOption = 0;
-		while (subOption != 5) {
+		while (subOption != 6) {
 			showCustomerMenu();
 			subOption = Helper.readInt("Enter option > ");
 			
@@ -105,7 +106,11 @@ private static ArrayList<Customer> customerList = new ArrayList<Customer>();
 
 				
 							
-			}else if (subOption == 5) {
+			}
+			else if (subOption == 5) {
+				updateCustomerInfo();
+			}
+			else if (subOption == 6) {
 				System.out.println("End of tasks");
 				break;
 			}
@@ -169,6 +174,38 @@ private static ArrayList<Customer> customerList = new ArrayList<Customer>();
 		
 		
 		
+	}
+	
+	//boon kai
+	
+	public static void updateCustomerInfo() {
+		viewAllCustomer();
+		if (customerList.size() == 0) {
+			System.out.println("No available customers.");
+		}
+		else {
+		int chooseID = Helper.readInt("Choose customer ID to update > ");
+		System.out.println(customerList.get(chooseID - 1).getName() + " has been selected.");
+		System.out.println("Option 1: Update Name");
+		System.out.println("Option 2: Update Email");
+		System.out.println("Option 3: Update Number");
+		int chooseOption = Helper.readInt("Enter option > ");
+		if (chooseOption == 1) {
+			String newName = Helper.readString("Enter new name > ");
+			customerList.get(chooseID - 1).setName(newName);
+		}
+		else if (chooseOption == 2) {
+			String newEmail = Helper.readString("Enter new email > ");
+			customerList.get(chooseID - 1).setEmail(newEmail);
+		}
+		else if (chooseOption == 3) {
+			int newNumber = Helper.readInt("Enter new number > ");
+			customerList.get(chooseID - 1).setPhone(newNumber);
+		}
+		System.out.println("Information updated!");
+	
+		
+	}
 	}
 	
 	

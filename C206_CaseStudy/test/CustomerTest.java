@@ -92,6 +92,16 @@ public class CustomerTest {
 			assertEquals("Checks if a number is found with validity.", output, CustomerDB.searchCustomer(80001234));
 		}
 		
+		@Test
+		public void updateCustomerTest() {
+			checkForArrayList();
+			addCustomerTest();
+			CustomerDB.updateCustomerInfo();
+			assertEquals("Check if name updated", "kaii", c1.getName());
+			
+			
+		}
+		
 		@After
 		public void tearDown() throws Exception {
 			//boon kai
