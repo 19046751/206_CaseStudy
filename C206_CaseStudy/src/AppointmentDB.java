@@ -82,7 +82,7 @@ public class AppointmentDB {
 		System.out.println("Option 3: Delete an existing appointment");
 		System.out.println("Option 4: Update an existing appointment");
 		System.out.println("Option 5: Search appointment by date");
-		System.out.println("Option 5: Exit");
+		System.out.println("Option 6: Exit");
 	}
 	public static void updateAppointment() {
 		viewAppointmentList();
@@ -144,15 +144,19 @@ public class AppointmentDB {
 			else if(subOption == 5) {
 				searchAppointment();
 			}
+			else if(subOption == 6){
+				System.out.println("Goodbye! See you again");
+			}
 			else {
 				System.out.println("Invalid input");
 			}
 			
 		}
-		System.out.println("Goodbye! See you again");
+		
 	}
 	public static int getSize() {
 		return apptList.size();
+		
 	}
 
 

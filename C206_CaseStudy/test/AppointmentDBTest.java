@@ -58,7 +58,7 @@ public class AppointmentDBTest {
 
 	 @Test
 	 public void deletetest(){
-	// Item list is not null, so that can delete a new appointment
+	// Appointment list is not null, so that can delete a new appointment
 	 assertNotNull("Test if there is valid Appointment arraylist to delete to", Appointment.getSize());
 
 	// Given that there are 2 appointment in the list, test if there is only 1 appointment after delete 
@@ -68,9 +68,14 @@ public class AppointmentDBTest {
 	 }
 	 @Test
 	 public void updatetest(){
-		// Item list is not null, so that can update a new appointment
+		// Appointment list is not null, so that can update a new appointment
 		 assertNotNull("Test if there is valid Appointment arraylist to update to", Appointment.getSize());
 		 
 	 }
-	 
+	 @Test
+	 public void searchtest(){
+			// Appointment list is not null, so that can update a new appointment
+			 assertNotNull("Test if there is valid Appointment arraylist to update to", Appointment.getSize());
+			 
+	 }
 }
