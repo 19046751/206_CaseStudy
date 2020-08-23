@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class CustomerDB{
 	
 private static ArrayList<Customer> customerList = new ArrayList<Customer>();
+
 	
 
 	public static int getSize() {
@@ -54,6 +55,9 @@ private static ArrayList<Customer> customerList = new ArrayList<Customer>();
 	//first sprint
 	public static void showCustomerMenu() {
 		//Display the menu
+		Helper.line(20, "-");
+		System.out.println("CUSTOMER PAGE");
+		Helper.line(20, "-");
 		System.out.println("Option 1: View all Customers");
 		System.out.println("Option 2: Search by Phone Number");
 		System.out.println("Option 3: Add a new Customer");
@@ -63,12 +67,11 @@ private static ArrayList<Customer> customerList = new ArrayList<Customer>();
 	}	
 	
 	//first sprint
-	public static void processOption(int subOption) {
-			subOption = 0;
+	public static void processOption() {
+		int subOption = 0;
 		while (subOption != 6) {
 			showCustomerMenu();
 			subOption = Helper.readInt("Enter option > ");
-			
 			if (subOption == 1) {
 				// View all Customer
 				System.out.println(viewAllCustomer());
@@ -111,9 +114,8 @@ private static ArrayList<Customer> customerList = new ArrayList<Customer>();
 				updateCustomerInfo();
 			}
 			else if (subOption == 6) {
-				System.out.println("End of tasks");
-				break;
-			}
+				System.out.println("End of task.");
+				}
 				//invalid option
 				else {
 					System.out.println("Invalid type");
