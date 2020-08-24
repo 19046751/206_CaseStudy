@@ -16,7 +16,7 @@ public class Feedback {
 	public Feedback(String customer, String feedback, String response) {
 		this.customer = customer;
 		this.feedback = feedback;
-		this.response = response;
+		this.response = "No response";
 	}
 	public String getCustomer() {
 		return customer;

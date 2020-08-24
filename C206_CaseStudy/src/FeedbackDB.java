@@ -48,7 +48,7 @@ public class FeedbackDB {
 
 	public static void processOption(int subOption) {
 		subOption = 0;
-		while (subOption != 4) {
+		while (subOption != 5) {
 			showFeedback();
 			subOption = Helper.readInt("Enter option > ");
 
@@ -76,8 +76,11 @@ public class FeedbackDB {
 				}
 
 			}
-
 			else if (subOption == 4) {
+				addResponse();
+			}
+
+			else if (subOption == 5) {
 				System.out.println("End of tasks");
 				break;
 			} else {
@@ -90,9 +93,8 @@ public class FeedbackDB {
 
 		String name = Helper.readString("Enter Name > ");
 		String feedback = Helper.readString("Enter Feedback > ");
-		String response = Helper.readString("Enter response > ");
 
-		Feedback newFB = new Feedback(name, feedback, response);
+		Feedback newFB = new Feedback(name, feedback, null);
 
 		return newFB;
 
@@ -104,5 +106,28 @@ public class FeedbackDB {
 		int number = Helper.readInt("Enter No. to delete > ");
 		return number;
 	}
+	
+	public static void addResponse() {
+		boolean found = false;
+		if (fbList.size() == 0) {
+			found = false;
+		}
+		else {
+			found = true;
+			viewAllFeedback();
+			int number = Helper.readInt("Select feedback number to repond to: ");
+			String response = Helper.readString("Enter response > ");
+			fbList.get(number - 1).setResponse(response);
+		}
+		
+		if (found == false) {
+			System.out.println("No feedback found.");
+		}
+		else if (found == true) {
+			System.out.println("Response added.");
+		}
+	}
+	
+	
 
 }
