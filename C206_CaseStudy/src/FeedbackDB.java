@@ -24,10 +24,10 @@ public class FeedbackDB {
 		if (fbList.size() == 0) {
 			System.out.println("No feedbacks.");
 		} else {
-			String output = String.format("%-5s %-15s%-20s%-20s\n", "NO.", "CUSTOMER", "FEEDBACK", "RESPONSES");
-			output += String.format("%-5s %-15s%-20s%-20s\n", "===", "========", "========", "=========");
+			String output = String.format("%-5s%-15s%-30s%-20s\n", "NO.", "CUSTOMER", "FEEDBACK", "RESPONSES");
+			output += String.format("%-5s%-15s%-30s%-20s\n", "===", "========", "========", "=========");
 			for (int i = 0; fbList.size() > i; i++) {
-				output += String.format("%-5d %-15s %-20s %-20s\n", i + 1, fbList.get(i).getCustomer(),
+				output += String.format("%-5d%-15s%-30s%-20s\n", i + 1, fbList.get(i).getCustomer(),
 						fbList.get(i).getFeedback(), fbList.get(i).getResponse());
 			}
 			System.out.println(output);
